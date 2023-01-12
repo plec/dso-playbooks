@@ -1,0 +1,6 @@
+# Variables nécessaires :
+# - PROJECT_NAME
+# - ORGANIZATION_NAME
+# - EMAIL
+# - ENV_LIST (optionnel)
+# - IS_OWNER (booléen, true seulement si from project_post)

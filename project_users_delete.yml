@@ -1,0 +1,8 @@
+# Variables nécessaires :
+# - PROJECT_NAME
+# - ORGANIZATION_NAME
+# - EMAIL
+# - ENV_LIST (optionnel)
+# 
+# Point de vigilence :
+# - S'assurer qu'on ne tente pas de supprimer le owner.

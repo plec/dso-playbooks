@@ -1,0 +1,7 @@
+# Variables nécessaires :
+# - PROJECT_NAME
+# - ORGANIZATION_NAME
+# - EMAILS (Sous réserve. Array, on boucle dessus : owner + users)
+# - ENV_LIST (doit venir de la base)
+# - REPO_DEST
+# - IS_INFRA
