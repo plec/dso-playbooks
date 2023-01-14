@@ -1,6 +1,28 @@
-# Variables nécessaires :
-# - PROJECT_NAME
-# - ORGANIZATION_NAME
-# - EMAILS (array, on boucle dessus : owner + users)
-# - ENV_LIST (optionnel, doit venir de la base)
-# - REPO_DEST (doit venir de la base)
+- name: Provisionning DSO - Import git
+  hosts: localhost
+  vars:
+    validation:
+      required: ["PROJECT_NAME", "ORGANIZATION_NAME","EMAILS","ENV_LIST","REPO_DEST"]
+      type: object
+      properties:
+        PROJECT_NAME:
+          type: string
+        ORGANIZATION_NAME:
+          type: string
+        EMAILS:
+          type: array
+          items:
+            type: string
+        ENV_LIST:
+          type: array
+          items:
+            type: string
+        REPO_DEST:
+          type: array
+          items:
+            type: string
+  tasks:
+    - name: Delete a project
+      ansible.builtin.debug:
+        msg:
+        - "Delete a project"

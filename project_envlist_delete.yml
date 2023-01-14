@@ -1,6 +1,26 @@
-# Variables nécessaires :
-# - PROJECT_NAME
-# - ORGANIZATION_NAME
-# - EMAIL
-# - ENV_LIST []
-# - REPOS [] .dest
+- name: Delete one or more environments in a projects and all repos
+  hosts: localhost
+  vars:
+    validation:
+      required: [ "PROJECT_NAME", "ORGANIZATION_NAME", "EMAIL", "ENV_LIST", "REPOS" ]
+      properties:
+        PROJECT_NAME:
+          type: string
+        ORGANIZATION_NAME:
+          type: string
+        EMAIL:
+          type: string
+        ENV_LIST:
+          type: array
+          items: 
+            type: string
+        REPOS: 
+          type: array
+          items: 
+            type: string
+
+  tasks:
+    - name: Delete a project environment
+      ansible.builtin.debug:
+        msg:
+        - "Delete a project environment"

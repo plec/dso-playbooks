@@ -2,4 +2,26 @@
 # - PROJECT_NAME
 # - ORGANIZATION_NAME
 # - EMAIL
-# - ENV_LIST (optionnel)
+- name: Create project
+  hosts: localhost
+  vars:
+    validation:
+      required: ["PROJECT_NAME", "ORGANIZATION_NAME","EMAIL"]
+      type: object
+      properties:
+        PROJECT_NAME:
+          type: string
+        ORGANIZATION_NAME:
+          type: string
+        EMAILS:
+          type: string
+        ENV_LIST:
+          type: array
+          items:
+            type: string
+
+  tasks:
+    - name: Delete a project
+      ansible.builtin.debug:
+        msg:
+        - "Delete a project"
